@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+    </style> 
+    <title>Richard</title>
+    <style>
+        * {
+        background-color: black;
+        }
+        h1 {
+            padding: 5em;
+        }
+        #about{
+            color: #ffffff;;
+        }
+        .text-switch-a {
+            text-decoration: none;
+        }
+        .text-switch {
+            font-family: 'Roboto', sans-serif;
+            color: #ea0f1e;
+            font-size: 20vw;
+            margin: 0;
+            padding: 1rem;
+            line-height: 110%;
+            letter-spacing: -1px;
+        }
+        .text-switch:hover {
+            transition: padding 0.3s cubic-bezier(.02,.09,.2,1.11);
+            padding-left:50px;
+        }
+    </style> 
+</head>
+<body>
+    <nav>
+        <h1>
+            <a href="#" class="text-switch-a">
+                <p id="about" class="text-switch" onmouseover="flipWord(true, 'About', 'about')" onmouseout="flipWord(false, 'Hello.', 'about')">Hello.</p>
+            </a>
+            <a href="#" class="text-switch-a">
+                <p id="work" class="text-switch" onmouseover="flipWord(true, 'Work', 'work')" onmouseout="flipWord(false, 'I am', 'work')">I am</p>
+            </a>
+            <a href="#" class="text-switch-a">
+                <p id="contact" class="text-switch" onmouseover="flipWord(true, 'Contact', 'contact')" onmouseout="flipWord(false, 'Richard', 'contact')">Richard</p>
+            </a>
+        </h1>
+    </nav>
+</body>
+<script>
+    function flipWord(boo, word, id) {
+        let isMouseOver = false;
+        let text = word; 
+        isMouseOver = boo;
+        if (isMouseOver === true) {
+            document.getElementById(id).textContent = word;
+        } else if (isMouseOver === false) {
+            document.getElementById(id).textContent = word;
+        }
+    }
+    
+</script>
+</html>

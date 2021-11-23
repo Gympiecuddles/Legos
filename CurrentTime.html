@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p id="timeP"></p>
+    <p id="greet"></p>
+</body>
+<script>
+const today = new Date();
+const time = today.getHours();
+
+document.getElementById("timeP").innerText = "It's currently " + time;
+
+(function() {
+    if (time >= 4 && time < 12) {
+        document.getElementById("greet").innerText = "Good Morning";
+    } else if (time >= 12 && time < 18) {
+        document.getElementById("greet").innerText = "Good Afternoon";
+    } else if (time >= 18 && time < 4) {
+        document.getElementById("greet").innerText = "Good Evening";
+    }
+})();
+
+</script>
+</html>

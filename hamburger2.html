@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2c94ee67f3.js" crossorigin="anonymous"></script>
+    <title>updated hamburger</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        button {
+            background-color: white;
+            border: none;
+            color: teal;
+            font-size: 3rem;
+            text-shadow: 4px 4px tomato;
+        }
+        button.active {
+            color: seagreen;
+        }
+        #contact {
+            background-color: green;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        #contact.active {
+            opacity: 1;
+            transition: opacity 2s;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        li {
+            list-style: none;
+        }
+        li a {
+            text-decoration: none;
+            color: thistle;
+            font-size: 70px;
+            padding: 15px;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <button id="btn">Say Hello!</button>
+        <ul id="contact">
+            <li><a href="https://www.linkedin.com/in/richard-schembri/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:schembri.y93@gmail.com"><i class="fas fa-envelope" target="_blank"></i></a></li>
+            <li><a href="https://github.com/Gympiecuddles/Portfolio" target="_blank"><i class="fab fa-github-square"></i></a></li>
+        </ul>
+</body>
+<script>
+const btn = document.getElementById("btn")
+const con = document.getElementById("contact")
+btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    con.classList.toggle('active');
+})
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const text = "twisted";
+        let index = 0;
+
+        function writeText() {
+            document.getElementById("twist").innerText = text.slice(0, index);
+
+            index++;
+            
+            if(index > text.length) {
+                index = 0;
+            }
+        }
+        setInterval(writeText, 400)
+    
+        
+    </script>
+    <style>
+        #twist {
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            color: maroon;
+            font-size: 100px;
+        
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <p id="twist"></p>
+    </section>
+</body>
+
+</html>
