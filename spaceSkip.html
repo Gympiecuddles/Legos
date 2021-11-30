@@ -111,8 +111,8 @@
 </head>
 <body>
     <div>
-        <h2 id="greet"></h2>
-        <h2>I'm<br>Richard Schembri</h2>
+        <h2 id="greet" class="skip"></h2>
+        <h2 class="skip">I'm<br>Richard Schembri</h2>
         <h2>Welcome!
             <br>
             <button id="btn">Say Hello</button>
@@ -149,7 +149,13 @@
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
-        document.getElementsByTagName("h2").style.color = "red";
+        let skip = document.getElementsByTagName("h2");
+        for(let elem in skip) {
+            skip[elem].style.cssText = `
+            animation-duration: 0s;
+            animation-delay: 0s;
+            `;
+        }
     }
 }
     </script>
