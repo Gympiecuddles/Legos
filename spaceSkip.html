@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2c94ee67f3.js" crossorigin="anonymous"></script>
+    <title>SPACE</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        h2 {
+            color: black;
+            position: absolute;
+            font-size: 5em; 
+            text-align: center;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h2:nth-child(1){
+            animation-name: intro1;
+            animation-duration: 3s;
+            animation-delay: 0s;
+            opacity: 0;
+            z-index: 1;
+        }
+        h2:nth-child(2){
+            animation-name: intro2;
+            animation-duration: 3.5s;
+            animation-delay: 3s;
+            opacity: 0;
+            z-index: 2;
+        }
+        h2:nth-child(3){
+            display: flex;
+            flex-direction: column;
+            height: 2em;
+            animation-name: intro3;
+            animation-duration: 13s;
+            animation-delay: 0s;
+            opacity: 1;
+            z-index: 3;
+        }
+        @keyframes intro1 {
+            0% {
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes intro2 {
+            0% {
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+            @keyframes intro3 {
+                0%,50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        button {
+            border: none;
+            color: teal;
+            background-color: white;
+            font-size: 4rem;
+            z-index: 4;
+            text-shadow: 3px 3px lightgrey;
+        }
+        button.active {
+            color: teal;
+        }
+        #contact {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        #contact.active {
+            opacity: 1;
+            transition: opacity 2s;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        li {
+            list-style: none;
+        }
+        li a {
+            text-decoration: none;
+            color: thistle;
+            font-size: 70px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 id="greet"></h2>
+        <h2>I'm<br>Richard Schembri</h2>
+        <h2>Welcome!
+            <br>
+            <button id="btn">Say Hello</button>
+            <div id="contact">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/richard-schembri/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="mailto:schembri.y93@gmail.com"><i class="fas fa-envelope" target="_blank"></i></a></li>
+                    <li><a href="https://github.com/Gympiecuddles/Portfolio" target="_blank"><i class="fab fa-github-square"></i></a></li>
+                </ul>
+            </div>
+        </h2>
+    </div>
+</body>
+<script>
+    const today = new Date();
+    const time = today.getHours();
+    
+    (function() {
+        if (time >= 4 && time < 12) {
+            document.getElementById("greet").innerText = "Good Morning";
+        } else if (time >= 12 && time < 18) {
+            document.getElementById("greet").innerText = "Good Afternoon";
+        } else if (time >= 18 || time < 4) {
+            document.getElementById("greet").innerText = "Good Evening";
+        }
+    })();
+    
+    const btn = document.getElementById("btn");
+    const con = document.getElementById("contact");
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        con.classList.toggle('active');
+})
+
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        document.getElementsByTagName("h2").style.color = "red";
+    }
+}
+    </script>
+</html>
