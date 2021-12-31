@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mountainLines {
+            height: 100%;
+            width: 100%;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 12s running 1 normal forwards;
+        }
+        @keyframes dash {
+            from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+        }
+    </style>
+</head>
+<body>
+    <svg
+    width="2000"
+    height="1000"
+    viewBox="0 0 280 1.5e+02"
+    version="1.1"
+    id="mountainLines"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
+      id="defs2" />
+   <g
+      id="layer1">
+     <path
+        style="fill:none;stroke:#000000;stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="M 290,69 C 260,75 240,48 210,45 190,45 180,57 160,54 150,48 140,30 120,27 100,25 80,48 68,57 56,63 26,48 -9.8,66"
+        id="path1021"/>
+     <path
+        style="fill:none;stroke:#000000;stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 290,42 c -10,0 -30,12 -40,18.5"
+        id="path1136" 
+       />
+     <path
+        style="fill:none;stroke:#000000;stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 140,36 c 10,-3 20,12 30,18.2"
+        id="path1140" />
+     <path
+        style="fill:none;stroke:#000000;stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="M -9.4,36 C 4.4,39 15,48 23,57"
+        id="path1144" />
+     <path
+        style="fill:none;stroke:#000000;stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="M 5.8,42 C 29,23 53,48 68,57"
+        id="path1148" />
+     <path
+        style="fill:none;stroke:#000000;stroke-width:0.3px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 230,50.5 c 20,-5 20,-2 35,1"
+        id="path1168" />
+   </g>
+ </svg>
+ <script>
+     let path = document.getElementById("path1021");
+     let length = path.getTotalLength();
+     console.log(length);
+ </script>
+</body>
+</html>
